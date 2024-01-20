@@ -26,18 +26,18 @@
   dest: /app
   remote_src: yes
 
-- name: Install Nodejs dependencies
+-name: Install Nodejs dependencies
    community.general.npm:
      path: /app
      state: latest
 
-- name: SystemD Setup
+-name: SystemD Setup
    ansible.builtin.copy:
      src: catalogue.servicefile
      dest: /etc/systemd/system/catalogue.service
 
 
-- name: Start catalogue service
+-name: Start catalogue service
     ansible.builtin.systemd:
       name: catalogue
       daemon_reload: yes
@@ -45,7 +45,7 @@
       state: restarted
 
 
-- name: Load Schema
+-name: Load Schema
    community.mongodb.mongodb_shell:
    files: "/app/schema/catalogue.js"
    idempotent: yes
