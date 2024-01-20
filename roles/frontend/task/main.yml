@@ -1,6 +1,6 @@
-- name: Install Inginx
+- name: Install Nginx
   ansible.builtin.yum:
-    name: niginx
+    name: nginx
     state: installed
 
 - name: Remove old HTTP Documents
@@ -18,7 +18,6 @@
     src: https://roboshop-artifacts.s3.amazonaws.com/frontend.zip
     dest: /usr/share/nginx/html
     remote_src: yes
-
 - name: Copy RoboShop Config file to Nginx
   ansible.builtin.template:
     src: roboshop.conf
