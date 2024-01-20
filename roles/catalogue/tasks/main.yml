@@ -22,9 +22,9 @@
 
 - name: download catalogue app content
   ansible.builtin.unarchive:
-   scr: https://roboshop-artifacts.s3.amazonaws.com/${component}.zip
-   dest: /app
-   remote_src: yes
+    src: https://roboshop-artifacts.s3.amazonaws.com/${component}.zip
+    dest: /app
+    remote_src: yes
 
 - name: Install Nodejs dependencies
   community.general.npm:
