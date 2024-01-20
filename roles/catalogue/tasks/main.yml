@@ -44,6 +44,11 @@
       enabled: yes
       state: restarted
 
+- name: install mongodb server
+  ansible.builtin.yum:
+    name: mongodb-org-shell
+    state: installed
+
 
 - name: Load Schema
   community.mongodb.mongodb_shell:
