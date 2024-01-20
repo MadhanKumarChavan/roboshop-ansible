@@ -46,7 +46,7 @@
 
 - name: install mongodb server
   ansible.builtin.yum:
-    name: mongodb-org-shel
+    name: mongodb-org-shell
     state: installed
 
 
