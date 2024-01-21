@@ -14,7 +14,7 @@
     path: /app
     state: latest
 - name: copy systemd file
-  ansible.builtin.copy:
+  ansible.builtin.templates:
     src: "{{component}}.service"
     dest: /etc/systemd/system/{{component}}.service
 
