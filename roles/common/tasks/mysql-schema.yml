@@ -24,4 +24,4 @@
     login_host: mysql-dev.devopsm26.online
     login_user: root
     login_password: "{{ root_msql_password}}"
-  when: "'cities' not in out.databases"
+ # when: "'cities' not in out.databases"
