@@ -13,17 +13,17 @@
   community.general.npm:
     path: /app
     state: latest
-#- name: copy systemd file
- # ansible.builtin.copy:
-  #  src: "{{component}}.service"
-   # dest: /etc/systemd/system/{{component}}.service
+- name: copy systemd file
+  ansible.builtin.copy:
+    src: "{{component}}.service"
+    dest: /etc/systemd/system/{{component}}.service
 
-#- name: start {{component}} service
-  # ansible.builtin.systemd:
-   # name: "{{component}}"
-    #daemon_reload: yes
-    #enabled: yes
-    #state: restarted
+- name: start {{component}} service
+   ansible.builtin.systemd:
+    name: "{{component}}"
+    daemon_reload: yes
+    enabled: yes
+    state: restarted
 
 #- name: Download DocDB CA file
  # ansible.builtin.get_url:
