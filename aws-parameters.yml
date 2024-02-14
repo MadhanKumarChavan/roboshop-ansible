@@ -30,11 +30,11 @@
         - {name: "dev.user.MONGO_URL", value: "mongodb://mongodb-dev.devopsm26.online:27017/users" }
         - {name: "dev.user.REDIS_HOST", value: "redis-dev.devopsm26.online" }
 
-    - name: Create secrets
-      community.aws.aws_ssm_parameter_store:
-        name: "{{ item.name }}"
-        value: "{{ item.value }}"
-        region: us-east-1
-        string_type: "securestring"
-      loop:
+    #- name: Create secrets
+     # community.aws.aws_ssm_parameter_store:
+      #  name: "{{ item.name }}"
+       # value: "{{ item.value }}"
+        #region: us-east-1
+        #string_type: "securestring"
+      #loop:
         - {name: "dev.payment.AMQP_PASS",value: "roboshop123"}
